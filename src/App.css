@@ -16,8 +16,8 @@ html {
 .container {
   box-sizing: border-box;
   position: relative;
-  top: -188px;
   width: 100%;
+  top: -188px;
 
   display: flex;
   flex-direction: column;
@@ -25,8 +25,8 @@ html {
 }
 
 .container--rounded-box {
-  width: 100%;
-  max-width: calc(var(--CONTAINER_SIZE) - 100px);
+  width: calc(100% - 100px);
+  max-width: var(--CONTAINER_SIZE);
 
   height: var(--ROUNDED_BOX_SIZE);
   border-radius: 12px;
@@ -51,16 +51,18 @@ html {
   top: calc(-1 * var(--ROUNDED_BOX_SIZE));
   margin: 0px 50px;
   max-width: calc(var(--CONTAINER_SIZE) - 100px);
-  padding: 50px;
+  padding: 100px;
 
   display: flex;
 }
 
 .container--content--main {
   padding-right: 20px;
+  max-width: 566px;
 }
 
 .container--content--sidebar {
   position: relative;
   top: -150px;
+  margin-left: 80px;
 }
