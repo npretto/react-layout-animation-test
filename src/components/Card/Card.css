@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+.card {
+  --PADDING: 25px;
+  position: relative;
+  width: 310px;
+  height: 414px;
+  border-radius: 12px;
+  background-color: #f8e627;
+  margin: 25px 0px;
+  padding: var(--PADDING);
+  overflow: hidden;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.card--background {
+  position: absolute;
+  top: -60px;
+  left: -30px;
+  margin: 0px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 216px;
+  z-index: -1;
+  color: #ecda1f;
+}
+
+.card--small {
+}
+
+.card--icon {
+  display: block;
+  margin-bottom: 30px;
+}
+
+.card--title {
+  font-family: Montserrat;
+  font-size: 26px;
+}
+
+.card--button {
+  align-self: stretch;
+  height: 51px;
+  border-radius: 8px;
+  border: solid 1px #3a405b;
+  background-color: #f8e627;
+
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: bold;
+}

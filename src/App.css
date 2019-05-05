@@ -52,4 +52,15 @@ html {
   margin: 0px 50px;
   max-width: calc(var(--CONTAINER_SIZE) - 100px);
   padding: 50px;
+
+  display: flex;
+}
+
+.container--content--main {
+  padding-right: 20px;
+}
+
+.container--content--sidebar {
+  position: relative;
+  top: -150px;
 }

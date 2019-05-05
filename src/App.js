@@ -1,5 +1,12 @@
 import React from "react"
 import Header from "./components/Header/Header"
+import Post from "./components/Post/Post"
+import Gallery from "./components/Gallery/Gallery"
+import Card from "./components/Card/Card"
+
+import posts from "./data/post.json"
+import cards from "./data/card.json"
+
 import "./App.css"
 
 export default class App extends React.Component {
@@ -36,45 +43,17 @@ export default class App extends React.Component {
             }
           />
           <div className="container--content">
-            <p> Lorem ipsum dolor sit amet</p>
-            <h1>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam
-            </h1>
-            Lorem ipsum dolor sit amen
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
-            <p>Lorem ipsum dolor sit amen</p>
+            <div className="container--content--main">
+              {posts.map((p, i) => (
+                <Post {...p} key={i} />
+              ))}
+              <Gallery />
+            </div>
+            <div className="container--content--sidebar">
+              {cards.map((c, i) => (
+                <Card i={i + 1} key={i} {...c} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
