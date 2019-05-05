@@ -1,0 +1,53 @@
+.post--small {
+  font-family: Montserrat;
+  font-size: 14px;
+}
+
+.post--title {
+  font-family: Helvetica;
+  font-size: 36px;
+  font-weight: bold;
+
+  line-height: 1.22;
+}
+
+.post--text {
+  font-family: Helvetica;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  color: #4a4a4a;
+}
+
+.post--info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px;
+  border-top: solid 2px #dde4e4;
+}
+
+.author {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+.author--pic {
+  clip-path: circle(15px at center);
+}
+
+.author--name {
+  margin: 0px 10px;
+  font-family: OpenSans;
+  font-size: 14px;
+
+  color: #9b9b9b;
+}
+
+.post--info--button {
+  margin-left: 20px;
+}
