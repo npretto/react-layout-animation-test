@@ -1,0 +1,30 @@
+.gallery {
+  box-sizing: content-box;
+  margin: -9px;
+  padding-top: 8px;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gallery--photo {
+  margin: 8px;
+}
+
+.gallery--photo--column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.gallery--photo--big {
+  max-width: 177px;
+  max-height: 177px;
+  border-radius: 8px;
+}
+
+.gallery--photo--small {
+  max-width: 80px;
+  max-height: 80px;
+  border-radius: 4px;
+}

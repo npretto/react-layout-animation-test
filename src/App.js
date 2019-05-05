@@ -6,6 +6,7 @@ import Card from "./components/Card/Card"
 
 import posts from "./data/post.json"
 import cards from "./data/card.json"
+import gallery from "./data/gallery.json"
 
 import "./App.css"
 
@@ -47,7 +48,7 @@ export default class App extends React.Component {
               {posts.map((p, i) => (
                 <Post {...p} key={i} />
               ))}
-              <Gallery />
+              <Gallery photos={gallery} />
             </div>
             <div className="container--content--sidebar">
               {cards.map((c, i) => (

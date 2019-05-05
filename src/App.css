@@ -50,17 +50,15 @@ html {
 .container--content {
   position: relative;
   top: calc(-1 * var(--ROUNDED_BOX_SIZE));
-  margin: 0px 50px -;
   margin-bottom: calc(-1 * var(--ROUNDED_BOX_SIZE));
 
-  max-width: calc(var(--CONTAINER_SIZE) - 100px);
+  max-width: var(--CONTAINER_SIZE);
   padding: 42px 100px;
 
   display: flex;
 }
 
 .container--content--main {
-  padding-right: 20px;
   max-width: 566px;
 }
 
