@@ -18,6 +18,7 @@ html {
   position: relative;
   width: 100%;
   top: -188px;
+  margin-bottom: -188px;
 
   display: flex;
   flex-direction: column;
@@ -49,9 +50,11 @@ html {
 .container--content {
   position: relative;
   top: calc(-1 * var(--ROUNDED_BOX_SIZE));
-  margin: 0px 50px;
+  margin: 0px 50px -;
+  margin-bottom: calc(-1 * var(--ROUNDED_BOX_SIZE));
+
   max-width: calc(var(--CONTAINER_SIZE) - 100px);
-  padding: 100px;
+  padding: 42px 100px;
 
   display: flex;
 }
@@ -64,5 +67,6 @@ html {
 .container--content--sidebar {
   position: relative;
   top: -150px;
+  margin-bottom: -150px;
   margin-left: 80px;
 }
