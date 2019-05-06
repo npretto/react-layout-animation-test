@@ -52,7 +52,7 @@ html {
   margin: 0px 50px;
 
   background: #ffffff;
-  transition: max-width 0.5s, border-radius 0.25s linear;
+  transition: width 0.5s, max-width 0.5s, border-radius 0.25s linear;
   z-index: -1;
 }
 
@@ -61,7 +61,7 @@ html {
   width: 100%;
   padding: 0px;
   border-radius: 0px;
-  transition: max-width 0.5s, border-radius 1s linear;
+  transition: width 0.5s, max-width 0.5s, border-radius 1s linear;
 }
 
 .container--content {

@@ -26,7 +26,7 @@ export default class App extends React.Component {
   }
 
   handleScroll = e => {
-    const scrolled = window.document.getElementById("App").scrollTop > 300
+    const scrolled = window.document.getElementById("App").scrollTop > 620
     if (scrolled !== this.state.scrolled) this.setState({ scrolled })
   }
 
