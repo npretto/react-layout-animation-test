@@ -32,15 +32,17 @@ export default class App extends React.Component {
 
   render() {
     const { scrolled } = this.state
+    const [firstPost, ...otherPosts] = posts
+
     return (
       <div className="App" id="App">
         <Header />
 
         <div className="background">
           {/* <img
-          className="background-image"
-          alt=""
-          src="https://s3-eu-west-1.amazonaws.com/production-hairdressr/fe-dummy/cover.png"
+            className="background-image"
+            alt=""
+            src="https://s3-eu-west-1.amazonaws.com/production-hairdressr/fe-dummy/cover.png"
           /> */}
         </div>
         <div className="container">
@@ -52,10 +54,11 @@ export default class App extends React.Component {
           />
           <div className="container--content">
             <div className="container--content--main">
-              {posts.map((p, i) => (
+              {firstPost && <Post {...firstPost} />}
+              <Gallery photos={gallery} />
+              {otherPosts.map((p, i) => (
                 <Post {...p} key={i} />
               ))}
-              <Gallery photos={gallery} />
             </div>
             <div className="container--content--sidebar">
               {cards.map((c, i) => (
