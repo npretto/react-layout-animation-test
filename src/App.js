@@ -8,34 +8,41 @@ import posts from "./data/post.json"
 import cards from "./data/card.json"
 import gallery from "./data/gallery.json"
 
-import "./App.css"
+import "./App.scss"
 
 export default class App extends React.Component {
   state = { scrolled: false }
 
   componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll)
+    window.document
+      .getElementById("App")
+      .addEventListener("scroll", this.handleScroll)
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll)
+    window.document
+      .getElementById("App")
+      .removeEventListener("scroll", this.handleScroll)
   }
 
   handleScroll = e => {
-    const scrolled = window.pageYOffset > 300
+    const scrolled = window.document.getElementById("App").scrollTop > 300
     if (scrolled !== this.state.scrolled) this.setState({ scrolled })
   }
 
   render() {
     const { scrolled } = this.state
     return (
-      <div className="App">
+      <div className="App" id="App">
         <Header />
-        <img
+
+        <div className="background">
+          {/* <img
           className="background-image"
           alt=""
           src="https://s3-eu-west-1.amazonaws.com/production-hairdressr/fe-dummy/cover.png"
-        />
+          /> */}
+        </div>
         <div className="container">
           <div
             className={

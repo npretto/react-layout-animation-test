@@ -1,5 +1,7 @@
+@import "./utils/parallax.scss";
+
 html {
-  --ROUNDED_BOX_SIZE: 200px;
+  --ROUNDED_BOX_SIZE: 900px;
   --CONTAINER_SIZE: 1152px;
 }
 
@@ -7,13 +9,24 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
+  @include parallax-container();
 }
 
-.background-image {
-  width: 100%;
+.background {
+  position: absolute;
+  top: 45px;
+  width: 105%;
+  min-height: 800px;
+  background-image: url("https://s3-eu-west-1.amazonaws.com/production-hairdressr/fe-dummy/cover.png");
+  background-size: cover;
+  background-position: center;
+  @include parallax(-5);
+  margin-top: -50px;
+  z-index: -5;
 }
 
 .container {
+  margin-top: 750px;
   box-sizing: border-box;
   position: relative;
   width: 100%;
@@ -23,9 +36,12 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
+  // @include parallax(0);
+  z-index: 0;
 }
 
 .container--rounded-box {
+  position: relative;
   width: calc(100% - 100px);
   max-width: var(--CONTAINER_SIZE);
 
@@ -37,6 +53,7 @@ html {
 
   background: #ffffff;
   transition: max-width 0.5s, border-radius 0.25s linear;
+  z-index: -1;
 }
 
 .container--rounded-box--scrolled {
@@ -63,11 +80,15 @@ html {
 }
 
 .container--content--sidebar {
-  max-height:100px;
+  max-height: 100px;
   position: -webkit-sticky;
   position: sticky;
-  margin-top:-200px;
-  top: 15px;
+  margin-top: -200px;
+  top: 0px;
   margin-bottom: -150px;
   margin-left: 80px;
+
+  @include parallax(-1);
+  z-index: 1;
+  transform-origin: 0% 0%;
 }
