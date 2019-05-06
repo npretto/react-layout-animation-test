@@ -63,8 +63,11 @@ html {
 }
 
 .container--content--sidebar {
-  position: relative;
-  top: -150px;
+  max-height:100px;
+  position: -webkit-sticky;
+  position: sticky;
+  margin-top:-200px;
+  top: 15px;
   margin-bottom: -150px;
   margin-left: 80px;
 }
