@@ -3,7 +3,7 @@ import { ReactComponent as FaceIcon } from "../Icons/FaceIcon.svg"
 
 import "./Card.css"
 
-const Card = ({ small, title, gallery, icon, i }) => {
+const Card = ({ small, title, gallery, icon, openGallery, i }) => {
   const bg = i > 9 ? i : `0${i}`
 
   return (
@@ -16,7 +16,9 @@ const Card = ({ small, title, gallery, icon, i }) => {
       </small>
       <h2 className="card--title">{title}</h2>
       {gallery ? (
-        <button className="card--button"> CLICK HERE</button>
+        <button onClick={() => openGallery(gallery)} className="card--button">
+          CLICK HERE
+        </button>
       ) : (
         <div />
       )}
