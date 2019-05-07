@@ -86,11 +86,6 @@ html {
 .container--content--sidebar {
   align-self: baseline; //needed by sticky
   position: sticky;
+  top: 0px;
   margin-top: -160px;
-  top: -130px;
-
-  //parallax part
-  @include parallax(-3);
-  z-index: 1;
-  transform-origin: -50% 0%;
 }
