@@ -3,7 +3,8 @@
 .card {
   --PADDING: 25px;
   position: relative;
-  width: 310px;
+  min-width: 250px;
+  max-width: 310px;
   height: 414px;
   border-radius: 12px;
   background-color: #f8e627;
@@ -24,6 +25,7 @@
   margin: 0px;
   font-family: "Montserrat", sans-serif;
   font-size: 216px;
+  font-weight: 900;
   z-index: -1;
   color: #ecda1f;
 }

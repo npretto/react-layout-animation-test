@@ -27,7 +27,10 @@ export default class App extends React.Component {
   }
 
   handleScroll = e => {
-    const scrolled = window.document.getElementById("App").scrollTop > 620
+    const scrolled =
+      window.document
+        .querySelector(".container--rounded-box")
+        .getBoundingClientRect().top < 0
     if (scrolled !== this.state.scrolled) this.setState({ scrolled })
   }
 

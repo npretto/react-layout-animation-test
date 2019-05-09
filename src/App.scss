@@ -18,12 +18,17 @@ html {
   top: 45px;
   width: 105%;
   min-height: 800px;
+  background: black;
   background-image: url("https://s3-eu-west-1.amazonaws.com/production-hairdressr/fe-dummy/cover.png");
   background-size: cover;
   background-position: center;
   @include parallax(-5);
   margin-top: -50px;
   z-index: -5;
+
+  @media (max-width: 600px) {
+    min-height: 500px;
+  }
 }
 
 .container {
@@ -39,6 +44,10 @@ html {
   align-items: center;
   // @include parallax(0);
   z-index: 0;
+
+  @media (max-width: 600px) {
+    margin-top: 500px;
+  }
 }
 
 .container--rounded-box {
@@ -55,6 +64,10 @@ html {
   background: #ffffff;
   transition: width 0.5s, max-width 0.5s, border-radius 0.25s linear;
   z-index: -1;
+
+  @media (max-width: 600px) {
+    width: calc(100% - 10vw);
+  }
 }
 
 .container--rounded-box--scrolled {
@@ -75,17 +88,32 @@ html {
   padding: 42px 100px;
 
   display: flex;
+
+  @media (max-width: 900px) {
+    padding: 42px 10vw;
+    flex-direction: column;
+    width: calc(100% - 15vw);
+  }
 }
 
 .container--content--main {
   max-width: 566px;
   padding: 0px 0px;
   margin-right: 80px;
+  @media (max-width: 900px) {
+    margin-right: 0px;
+  }
 }
 
 .container--content--sidebar {
-  align-self: baseline; //needed by sticky
-  position: sticky;
-  top: 0px;
-  margin-top: -160px;
+  @media (min-width: 900px) {
+    align-self: baseline; //needed by sticky
+    position: sticky;
+    top: 0px;
+    margin-top: -160px;
+  }
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

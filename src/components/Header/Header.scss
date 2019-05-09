@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
+// @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 .header {
   width: 100%;
@@ -6,6 +6,9 @@
   padding: 0px 50px;
   background-color: #ffffff;
   display: flex;
+  @media (max-width: 600px) {
+    padding: 0px 5vw;
+  }
 }
 
 .header-title {

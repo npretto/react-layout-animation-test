@@ -5,6 +5,15 @@
   margin-bottom: 50px;
   display: flex;
   flex-wrap: wrap;
+
+  @media (min-width: 600px) {
+    height: 200px;
+    overflow-y: hidden;
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 }
 
 .gallery--photo {
@@ -14,7 +23,10 @@
 .gallery--photo--column {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  @media (max-width: 600px) {
+    justify-content: center;
+    flex-direction: row;
+  }
 }
 
 .gallery--photo--big {

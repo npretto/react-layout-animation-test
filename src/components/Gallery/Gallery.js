@@ -1,20 +1,20 @@
 import React, { Fragment } from "react"
 import chunk from "lodash/chunk"
-import "./Gallery.css"
+import "./Gallery.scss"
 
 const Gallery = ({ photos }) => {
   return (
     <div className="gallery">
       {chunk(photos, 3).map(([big, small1, small2], i) => (
-        <Fragment>
-          <div className="gallery--photo--column" key={i + "b"}>
+        <Fragment key={i}>
+          <div className="gallery--photo--column">
             <img
               src={big}
               alt=""
               className="gallery--photo gallery--photo--big"
             />
           </div>
-          <div className="gallery--photo--column" key={i + "sm"}>
+          <div className="gallery--photo--column" a>
             <img
               src={small1}
               alt=""
