@@ -1,5 +1,3 @@
-@import "./utils/parallax.scss";
-
 html {
   --ROUNDED_BOX_SIZE: 900px;
   --CONTAINER_SIZE: 1152px;
@@ -10,19 +8,17 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  @include parallax-container();
 }
 
 .background {
   position: absolute;
   top: 45px;
-  width: 105%;
+  width: 100%;
   min-height: 800px;
   background: black;
   background-image: url("https://s3-eu-west-1.amazonaws.com/production-hairdressr/fe-dummy/cover.png");
   background-size: cover;
   background-position: center;
-  @include parallax(-5);
   margin-top: -50px;
   z-index: -5;
 

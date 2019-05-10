@@ -1,9 +1,9 @@
 import React from "react"
 import "./Header.scss"
 
-const Header = () => {
+const Header = ({ top }) => {
   return (
-    <header className="header">
+    <header className="header" style={{ top }}>
       <p className="header-title">Astrubale</p>
       <div>
         <div />

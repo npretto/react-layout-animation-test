@@ -12,26 +12,38 @@ import gallery from "./data/gallery.json"
 import "./App.scss"
 
 export default class App extends React.Component {
-  state = { scrolled: false, popupGallery: null, isGalleryOpen: false }
+  state = {
+    scrolled: false,
+    popupGallery: null,
+    isGalleryOpen: false,
+    headerTop: 0
+  }
 
   componentDidMount() {
-    window.document
-      .getElementById("App")
-      .addEventListener("scroll", this.handleScroll)
+    window.document.addEventListener("scroll", this.handleScroll)
   }
 
   componentWillUnmount() {
-    window.document
-      .getElementById("App")
-      .removeEventListener("scroll", this.handleScroll)
+    window.document.removeEventListener("scroll", this.handleScroll)
   }
 
   handleScroll = e => {
-    const scrolled =
-      window.document
-        .querySelector(".container--rounded-box")
-        .getBoundingClientRect().top < 0
-    if (scrolled !== this.state.scrolled) this.setState({ scrolled })
+    const roundedBoxPosition = window.document
+      .querySelector(".container--rounded-box")
+      .getBoundingClientRect()
+
+    const amountScrolled = window.pageYOffset
+
+    const scrolled = roundedBoxPosition.top < 0
+
+    //make header sticky untill the roundebox "pushes" it up
+    const headerTop =
+      roundedBoxPosition.top > 100 ? 0 : roundedBoxPosition.top - 100
+
+    //image parallax
+    const backgroundScroll = `${amountScrolled * 0.5}px`
+
+    this.setState({ scrolled, headerTop, backgroundScroll })
   }
 
   openGallery = popupGallery =>
@@ -40,20 +52,29 @@ export default class App extends React.Component {
   closeGallery = () => this.setState({ isGalleryOpen: false })
 
   render() {
-    const { scrolled, isGalleryOpen, popupGallery } = this.state
+    const {
+      scrolled,
+      isGalleryOpen,
+      popupGallery,
+      headerTop,
+      backgroundScroll
+    } = this.state
     const [firstPost, ...otherPosts] = posts
 
     return (
       <Fragment>
         <div className="App" id="App">
-          <Header />
+          <Header top={headerTop} />
 
-          <div className="background">
+          <div
+            className="background"
+            style={{ transform: `translateY(${backgroundScroll})` }}
+          >
             {/* <img
-            className="background-image"
-            alt=""
-            src="https://s3-eu-west-1.amazonaws.com/production-hairdressr/fe-dummy/cover.png"
-          /> */}
+              className="background-image"
+              alt=""
+              src="https://s3-eu-west-1.amazonaws.com/production-hairdressr/fe-dummy/cover.png"
+            /> */}
           </div>
           <div className="container">
             <div
