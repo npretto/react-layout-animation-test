@@ -6,8 +6,8 @@ const Header = ({ top }) => {
     <header className="header" style={{ top }}>
       <p className="header-title">Astrubale</p>
       <div>
-        <div />
-        <div>LOREM IPSUM</div>
+        <div>LOREM </div>
+        <div> IPSUM</div>
         <div>DOLOR</div>
       </div>
       <div />

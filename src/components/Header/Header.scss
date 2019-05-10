@@ -24,14 +24,18 @@
 
 .header > div {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .header div div {
+  padding: 0px 20px;
   flex: 1;
-  font-family: OpenSans;
+  font-family: Helvetica, sans-serif;
   font-size: 14px;
   color: #9b9b9b;
   letter-spacing: 1px;
+  vertical-align: middle;
 }
