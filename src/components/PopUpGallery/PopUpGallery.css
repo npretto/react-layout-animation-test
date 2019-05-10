@@ -76,7 +76,7 @@
 .popup-gallery--photos {
   flex: 1;
   display: flex;
-  overflow-x: hidden;
+  overflow-x: scroll;
   overflow-y: hidden;
   max-height: 0px;
   transition: all 0.3s 0.2s;
