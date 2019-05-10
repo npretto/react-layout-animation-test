@@ -14,7 +14,7 @@ const Gallery = ({ photos }) => {
               className="gallery--photo gallery--photo--big"
             />
           </div>
-          <div className="gallery--photo--column" a>
+          <div className="gallery--photo--column">
             <img
               src={small1}
               alt=""
