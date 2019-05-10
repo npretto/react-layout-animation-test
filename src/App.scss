@@ -16,15 +16,23 @@ html {
   width: 100%;
   min-height: 800px;
   background: black;
-  background-image: url("https://s3-eu-west-1.amazonaws.com/production-hairdressr/fe-dummy/cover.png");
-  background-size: cover;
-  background-position: center;
+
   margin-top: -50px;
   z-index: -5;
+
+  overflow-y: hidden;
 
   @media (max-width: 600px) {
     min-height: 500px;
   }
+}
+
+.background--image {
+  width: 100%;
+  min-height: 800px;
+  background-image: url("https://s3-eu-west-1.amazonaws.com/production-hairdressr/fe-dummy/cover.png");
+  background-size: cover;
+  background-position: center;
 }
 
 .container {
@@ -103,10 +111,11 @@ html {
 
 .container--content--sidebar {
   @media (min-width: 900px) {
-    align-self: baseline; //needed by sticky
+    align-self: flex-start; //needed to make sticky work, otherwise it would stretch and get all height
     position: sticky;
-    top: 0px;
-    margin-top: -160px;
+    top: -500px;
+    margin-top: -550px;
+    transform: translate3d(0px, 390px, 0px);
   }
 
   display: flex;

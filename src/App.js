@@ -43,7 +43,12 @@ export default class App extends React.Component {
     //image parallax
     const backgroundScroll = `${amountScrolled * 0.5}px`
 
-    this.setState({ scrolled, headerTop, backgroundScroll })
+    const sidebarPosition =
+      window.innerWidth < 900
+        ? 0
+        : Math.min(500, 550 - 160 + amountScrolled * 0.2)
+
+    this.setState({ scrolled, headerTop, backgroundScroll, sidebarPosition })
   }
 
   openGallery = popupGallery =>
@@ -57,7 +62,8 @@ export default class App extends React.Component {
       isGalleryOpen,
       popupGallery,
       headerTop,
-      backgroundScroll
+      backgroundScroll,
+      sidebarPosition
     } = this.state
     const [firstPost, ...otherPosts] = posts
 
@@ -66,10 +72,11 @@ export default class App extends React.Component {
         <div className="App" id="App">
           <Header top={headerTop} />
 
-          <div
-            className="background"
-            style={{ transform: `translateY(${backgroundScroll})` }}
-          >
+          <div className="background">
+            <div
+              className="background--image"
+              style={{ transform: `translate3d(0px,${backgroundScroll},0px)` }}
+            />
             {/* <img
               className="background-image"
               alt=""
@@ -91,7 +98,12 @@ export default class App extends React.Component {
                   <Post {...p} key={i} />
                 ))}
               </div>
-              <div className="container--content--sidebar">
+              <div
+                className="container--content--sidebar"
+                style={{
+                  transform: `translate3d(0px,${sidebarPosition}px,0px)`
+                }}
+              >
                 {cards.map((c, i) => (
                   <Card
                     i={i + 1}
